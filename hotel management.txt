@@ -1,0 +1,101 @@
+create database hotel;
+
+use hotel;
+
+show tables;
++-----------------+
+| Tables_in_hotel |
++-----------------+
+| cregister       |
+| custoomer       |
+| driver          |
+| employee        |
+| room            |
++-----------------+
+
+desc cregister;
++-----------+--------------+------+-----+-----------------+-------------------+
+| Field     | Type         | Null | Key | Default         | Extra             |
++-----------+--------------+------+-----+-----------------+-------------------+
+| fname     | varchar(255) | NO   |     | NULL            |                   |
+| lname     | varchar(255) | NO   |     | NULL            |                   |
+| rusername | varchar(10)  | NO   | PRI | NULL            |                   |
+| rpass     | varchar(8)   | NO   | PRI | NULL            |                   |
+| radd      | varchar(50)  | YES  |     | _cp850\'dewas\' | DEFAULT_GENERATED |
+| phone     | bigint       | NO   |     | NULL            |                   |
+| email     | varchar(50)  | NO   |     | NULL            |                   |
++-----------+--------------+------+-----+-----------------+-------------------+
+
+desc room;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| cleaning | varchar(10) | YES  |     | NULL    |       |
+| Price    | int         | YES  |     | NULL    |       |
+| bedtype  | varchar(20) | YES  |     | NULL    |       |
+| roomid   | varchar(10) | YES  |     | NULL    |       |
+| avale    | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+desc driver;
++--------------+-----------------------+------+-----+---------+-------+
+| Field        | Type                  | Null | Key | Default | Extra |
++--------------+-----------------------+------+-----+---------+-------+
+| drive        | varchar(50)           | YES  |     | NULL    |       |
+| age          | int                   | YES  |     | NULL    |       |
+| gender       | enum('Male','Female') | YES  |     | NULL    |       |
+| carcompany   | varchar(255)          | YES  |     | NULL    |       |
+| carmodel     | varchar(255)          | YES  |     | NULL    |       |
+| availability | varchar(10)           | YES  |     | NULL    |       |
+| location     | varchar(255)          | YES  |     | NULL    |       |
++--------------+-----------------------+------+-----+---------+-------+
+
+desc custoomer;
++------------+-----------------------+------+-----+---------+-------+
+| Field      | Type                  | Null | Key | Default | Extra |
++------------+-----------------------+------+-----+---------+-------+
+| documentt  | varchar(20)           | YES  |     | NULL    |       |
+| namer      | varchar(255)          | YES  |     | NULL    |       |
+| genderr    | enum('male','female') | YES  |     | NULL    |       |
+| countryy   | varchar(50)           | YES  |     | NULL    |       |
+| alocate    | int                   | YES  |     | NULL    |       |
+| checkin    | varchar(20)           | YES  |     | NULL    |       |
+| depositt   | varchar(50)           | YES  |     | NULL    |       |
+| numberr    | varchar(10)           | YES  |     | NULL    |       |
+| customerid | varchar(10)           | YES  |     | NULL    |       |
++------------+-----------------------+------+-----+---------+-------+
+
+ desc employee;
++--------+-----------------------+------+-----+---------+-------+
+| Field  | Type                  | Null | Key | Default | Extra |
++--------+-----------------------+------+-----+---------+-------+
+| ename  | varchar(255)          | NO   |     | NULL    |       |
+| age    | int                   | NO   |     | NULL    |       |
+| gender | enum('male','female') | YES  |     | NULL    |       |
+| eid    | varchar(10)           | NO   | PRI | NULL    |       |
+| job    | varchar(100)          | NO   |     | NULL    |       |
+| phone  | bigint                | YES  | UNI | NULL    |       |
+| email  | varchar(255)          | NO   |     | NULL    |       |
+| salary | bigint                | NO   |     | NULL    |       |
++--------+-----------------------+------+-----+---------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
