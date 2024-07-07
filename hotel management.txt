@@ -13,6 +13,15 @@ show tables;
 | room            |
 +-----------------+
 
+CREATE TABLE cregister (
+    fname VARCHAR(255) NOT NULL,
+    lname VARCHAR(255) NOT NULL,
+    rusername VARCHAR(10) PRIMARY KEY,
+    rpass VARCHAR(8) NOT NULL,
+    radd VARCHAR(50) DEFAULT '_cp850\'dewas\'',
+    phone BIGINT NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
 desc cregister;
 +-----------+--------------+------+-----+-----------------+-------------------+
 | Field     | Type         | Null | Key | Default         | Extra             |
@@ -26,6 +35,13 @@ desc cregister;
 | email     | varchar(50)  | NO   |     | NULL            |                   |
 +-----------+--------------+------+-----+-----------------+-------------------+
 
+CREATE TABLE room (
+    cleaning VARCHAR(10),
+    Price INT,
+    bedtype VARCHAR(20),
+    roomid VARCHAR(10),
+    avale VARCHAR(10)
+);
 desc room;
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
@@ -37,6 +53,15 @@ desc room;
 | avale    | varchar(10) | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
 
+CREATE TABLE driver (
+    drive VARCHAR(50),
+    age INT,
+    gender ENUM('Male', 'Female'),
+    carcompany VARCHAR(255),
+    carmodel VARCHAR(255),
+    availability VARCHAR(10),
+    location VARCHAR(255)
+);
 desc driver;
 +--------------+-----------------------+------+-----+---------+-------+
 | Field        | Type                  | Null | Key | Default | Extra |
@@ -50,6 +75,17 @@ desc driver;
 | location     | varchar(255)          | YES  |     | NULL    |       |
 +--------------+-----------------------+------+-----+---------+-------+
 
+CREATE TABLE custoomer(
+    documentt VARCHAR(20),
+    namer VARCHAR(255),
+    genderr ENUM('male', 'female'),
+    countryy VARCHAR(50),
+    alocate INT,
+    checkin VARCHAR(20),
+    depositt VARCHAR(50),
+    numberr VARCHAR(10),
+    customerid VARCHAR(10)
+);
 desc custoomer;
 +------------+-----------------------+------+-----+---------+-------+
 | Field      | Type                  | Null | Key | Default | Extra |
@@ -65,6 +101,16 @@ desc custoomer;
 | customerid | varchar(10)           | YES  |     | NULL    |       |
 +------------+-----------------------+------+-----+---------+-------+
 
+CREATE TABLE employee (
+    ename VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    gender ENUM('male', 'female'),
+    eid VARCHAR(10) NOT NULL PRIMARY KEY,
+    job VARCHAR(100) NOT NULL,
+    phone BIGINT UNIQUE,
+    email VARCHAR(255) NOT NULL,
+    salary BIGINT NOT NULL
+);
  desc employee;
 +--------+-----------------------+------+-----+---------+-------+
 | Field  | Type                  | Null | Key | Default | Extra |
